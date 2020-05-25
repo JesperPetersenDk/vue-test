@@ -4,6 +4,8 @@
     <p v-if="counter == 0">Ingen click lige nu</p>
     <p v-else-if="counter > 0">Likes: {{ counter }}</p>
     <p v-else>Fejl her!</p>
+    <input type="text" v-on:keyup.enter="alertMe" />
+    <p v-if="InputText == true">Godkendt indhold!</p>
   </div>
 </template>
 
@@ -11,14 +13,18 @@
 <script>
 export default {
   el: "about",
-  data: function(step) {
+  data: function() {
     return {
-      counter: 0
+      counter: 0,
+      InputText: false
     };
   },
   methods: {
     clickNow: function(step) {
       this.counter += step;
+    },
+    alertMe: function() {
+      this.InputText = true;
     }
   }
 };
