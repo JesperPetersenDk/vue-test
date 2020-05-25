@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    {{ title }}
+    {{ title }} 
+    <h3>{{ deck }}</h3>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   el: "home",
   data: function() {
     return {
-      title: "Test Vue js!"
+      title: "Test Vue js!",
+      deck: "Jesper"
     };
   }
 };
