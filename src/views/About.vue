@@ -1,5 +1,23 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <button v-on:click="clickNow">Click me</button>
+    <p>{{ counter }}</p>
   </div>
 </template>
+
+
+<script>
+export default {
+  el: "about",
+  data: function() {
+    return {
+      counter: 0
+    };
+  },
+  methods: {
+    clickNow: function() {
+      this.counter++;
+    }
+  }
+};
+</script>
