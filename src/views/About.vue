@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <button v-on:click="clickNow">Click me</button>
+    <button v-on:click="clickNow(2, $event)">Click me</button>
     <p v-if="counter == 0">Ingen click lige nu</p>
     <p v-else-if="counter > 0">Likes: {{ counter }}</p>
     <p v-else>Fejl her!</p>
@@ -11,16 +11,14 @@
 <script>
 export default {
   el: "about",
-  data: function() {
+  data: function(step) {
     return {
-      counter: 0,
-      x: 0,
-      y: 0
+      counter: 0
     };
   },
   methods: {
-    clickNow: function() {
-      this.counter++;
+    clickNow: function(step) {
+      this.counter += step;
     }
   }
 };
