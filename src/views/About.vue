@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <button v-on:click="clickNow(2, $event)">Click me</button>
+    <button v-on:click="clickNow(5 * 2.42, $event)">Click me</button>
     <p v-if="counter == 0">Ingen click lige nu</p>
     <p v-else-if="counter > 0">Likes: {{ counter }}</p>
     <p v-else>Fejl her!</p>
